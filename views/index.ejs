@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEKA</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <form action="/upload" method="post" style="display: grid;" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" />
+        <label for="Aadhar">Aadhar no:</label>
+        <input type="text" id="Aadhar" name="aadhar" />
+        <label for="password">New Password:</label>
+        <input type="password" id="password" name="password" />
+        <label for="file">Patient Record File:</label>
+        <input type="file" id="file" name="file" required /><br>
+        <button type="submit">Send to DB</button>
+    </form><br>
+    <% if (locals.fileLink != null) { %>
+        <div>
+            <img src="/images/nfc.jpeg.jpg" width="50%" height="20%" alt="TAG"><br>
+            NFC URL
+            <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+        </div>
+    <% } %>
+    
+</body>
+</html>
